@@ -17,7 +17,7 @@ export default function Calculator() {
     } else if (value === "⌫") {
       setInput(input.slice(0, -1));
     } else {
-      setInput(input + value + "\n");
+      setInput(input + value);
     }
   };
 
@@ -61,7 +61,7 @@ export default function Calculator() {
         transcript = transcript.replace(new RegExp(`\\b${numWord}\\b`, "g"), numberMap[numWord]);
       });
 
-      setInput(input + transcript + "\n"); 
+      setInput(input + transcript); 
     };
 
     recognition.onerror = (event) => {
